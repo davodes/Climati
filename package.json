@@ -1,0 +1,22 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "build:fast": "astro build --experimental-static-build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "optimize": "astro build && astro preview"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^6.5.3",
+    "astro": "^5.2.5",
+    "lucide-astro": "^0.525.0"
+  },
+  "devDependencies": {
+    "terser": "^5.43.1"
+  }
+}

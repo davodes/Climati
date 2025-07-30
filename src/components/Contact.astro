@@ -1,0 +1,273 @@
+---
+import { MapPin, Phone, Mail, Clock } from 'lucide-astro';
+---
+
+<section class="contact section-padding" id="contacto">
+  <div class="container">
+    <div class="contact-header">
+      <h2 class="contact-title">Contacta con Nosotros</h2>
+      <p class="contact-subtitle">
+        Solicita tu presupuesto gratuito o resuelve cualquier duda
+      </p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="info-card">
+          <div class="info-icon">
+            <MapPin size={24} />
+          </div>
+          <div class="info-content">
+            <h3>Oficina Principal</h3>
+            <p>Calle Principal 123<br>28001 Madrid, España</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <Phone size={24} />
+          </div>
+          <div class="info-content">
+            <h3>Teléfono</h3>
+            <p>
+              <a href="tel:+34900123456">+34 900 123 456</a><br>
+              <small>Atención 24/7 para emergencias</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <Mail size={24} />
+          </div>
+          <div class="info-content">
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:info@climati.com">info@climati.com</a><br>
+              <small>Respuesta en menos de 24h</small>
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <Clock size={24} />
+          </div>
+          <div class="info-content">
+            <h3>Horario</h3>
+            <p>
+              Lun - Vie: 8:00 - 18:00<br>
+              <small>Emergencias 24/7</small>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="service">Servicio de interés</label>
+          <select id="service" name="service" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="aire-acondicionado">Aire Acondicionado</option>
+            <option value="calefaccion">Calefacción</option>
+            <option value="ventilacion">Ventilación</option>
+            <option value="mantenimiento">Mantenimiento</option>
+            <option value="energia-solar">Energía Solar</option>
+            <option value="consultoria">Consultoría</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" placeholder="Cuéntanos qué necesitas..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          Enviar Consulta
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+    color: white;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .contact-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .info-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+
+  .info-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .info-content p {
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  .info-content a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .info-content a:hover {
+    text-decoration: underline;
+  }
+
+  .info-content small {
+    font-size: 0.875rem;
+    opacity: 0.8;
+  }
+
+  .contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: white;
+    color: #374151;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #0EA5E9;
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-submit {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .contact-title {
+      font-size: 2rem;
+    }
+
+    .contact-form {
+      padding: 2rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    
+    form?.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+      
+      // Here you would typically send the form data to your server
+      // For now, we'll just show a success message
+      
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      alert('¡Gracias por tu consulta! Te contactaremos pronto.');
+      form.reset();
+    });
+  });

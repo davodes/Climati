@@ -1,0 +1,196 @@
+---
+import { CheckCircle, Phone, FileText } from 'lucide-astro';
+---
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-background">
+      <!-- <img 
+        src="https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg" 
+        srcset="https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?w=800 800w, 
+        https://images.pexels.com/photos/7031406/pexels-photo-7031406.jpeg?w=1200 1200w"
+        sizes="(max-width: 768px) 800px, 1200px" 
+        alt="Técnico instalando aire acondicionado" 
+        class="hero-bg-image"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width="1920"
+        height="1080"
+      /> -->
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Expertos en 
+          <span class="gradient-text">climatización</span>
+          para tu hogar y empresa
+        </h1>
+        <p class="hero-description">
+          Instalación, mantenimiento y reparación de sistemas de aire acondicionado, 
+          calefacción y ventilación. Más de 20 años de experiencia garantizando tu confort.
+        </p>
+        <div class="hero-actions">
+          <a href="#contacto" class="btn btn-primary hero-btn">
+            <FileText size={20} />
+            Solicitar Presupuesto
+          </a>
+          <a href="tel:+34900123456" class="btn btn-secondary hero-btn">
+            <Phone size={20} />
+            Emergencia 24h
+          </a>
+        </div>
+        <div class="hero-features">
+          <div class="feature">
+            <CheckCircle size={20} class="feature-icon" />
+            <span>Garantía 2 años</span>
+          </div>
+          <div class="feature">
+            <CheckCircle size={20} class="feature-icon" />
+            <span>Técnicos certificados</span>
+          </div>
+          <div class="feature">
+            <CheckCircle size={20} class="feature-icon" />
+            <span>Servicio 24/7</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .hero-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgb(0 50 72 / 80%) 0%, rgb(16 144 185 / 60%) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: 80px;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    /* padding: 0 15rem; */
+    top: 50px;
+  }
+
+  .hero-text {
+    max-width: 1200px;
+    color: white;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-features {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+  }
+
+  .feature-icon {
+    color: #10B981;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-features {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-features {
+      gap: 0.75rem;
+    }
+  }
+</style>

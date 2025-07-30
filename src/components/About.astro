@@ -1,0 +1,214 @@
+---
+import { Award, Shield, Zap, Heart } from 'lucide-astro';
+---
+
+<section class="about section-padding" id="nosotros">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="about-title">¿Por qué elegir Climati?</h2>
+        <p class="about-description">
+          Con más de 20 años de experiencia en el sector de la climatización, 
+          somos la empresa de confianza para miles de clientes en toda España. 
+          Nuestro compromiso con la calidad y la satisfacción del cliente nos 
+          convierte en líderes del sector.
+        </p>
+        
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">5000+</div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Servicio técnico</div>
+          </div>
+        </div>
+
+        <div class="certifications">
+          <h3 class="cert-title">Certificaciones y Garantías</h3>
+          <ul class="cert-list">
+            <li class="cert-item">
+              <Award size={20} class="cert-icon" />
+              Técnicos certificados por fabricantes
+            </li>
+            <li class="cert-item">
+              <Shield size={20} class="cert-icon" />
+              Garantía de 2 años en todas las instalaciones
+            </li>
+            <li class="cert-item">
+              <Zap size={20} class="cert-icon" />
+              Respuesta rápida en emergencias
+            </li>
+            <li class="cert-item">
+              <Heart size={20} class="cert-icon" />
+              Compromiso con la eficiencia energética
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="about-image">
+        <img 
+          src="https://images.pexels.com/photos/5691640/pexels-photo-5691640.jpeg"
+          alt="Equipo técnico de Climati trabajando"
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="500"
+        />
+        <div class="image-overlay">
+          <div class="overlay-content">
+            <h4>Equipo Profesional</h4>
+            <p>Técnicos especializados y certificados</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: white;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #1F2937;
+  }
+
+  .about-description {
+    font-size: 1.125rem;
+    color: #64748B;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+    border-radius: 1rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0EA5E9 0%, #10B981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    color: #64748B;
+    font-weight: 500;
+  }
+
+  .cert-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1F2937;
+  }
+
+  .cert-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #374151;
+  }
+
+  .cert-icon {
+    color: #0EA5E9;
+    flex-shrink: 0;
+  }
+
+  .about-image {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .about-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 2rem;
+    color: white;
+  }
+
+  .overlay-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .overlay-content p {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .about-title {
+      font-size: 2rem;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .about-image img {
+      height: 300px;
+    }
+  }
+</style>
